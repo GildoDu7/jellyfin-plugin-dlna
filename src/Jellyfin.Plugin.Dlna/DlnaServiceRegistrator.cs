@@ -15,6 +15,7 @@ using MediaBrowser.Controller;
 using MediaBrowser.Controller.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Hosting;
 using Rssdp.Infrastructure;
 
 namespace Jellyfin.Plugin.Dlna;
@@ -64,5 +65,7 @@ public class DlnaServiceRegistrator : IPluginServiceRegistrator
         });
 
         serviceCollection.AddHostedService<DlnaHost>();
+
+        serviceCollection.AddTransient<IStartupFilter, DlnaStartupFilter>();
     }
 }
