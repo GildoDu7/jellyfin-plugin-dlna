@@ -1,9 +1,10 @@
+
 name: "DLNA"
 guid: "33EBA9CD-7DA1-4720-967F-DD7DAE7B74A1"
 imageUrl: ""
-version: 10
-targetAbi: "10.11.0.0"
-framework: "net9.0"
+version: 14
+targetAbi: "12.2.0.0"
+framework: "net10.0"
 owner: "jellyfin"
 overview: "DLNA Service"
 description: >
@@ -16,5 +17,5 @@ artifacts:
   - "Jellyfin.Plugin.Dlna.Playback.dll"
   - "Rssdp.dll"
 changelog: |-
-  - Encode header values (#174) @crobibero
-  - Avoid invalid PlayCommand start index (#175) @crobibero
+  - Adaptation pour Jellyfin 12.2
+  - Correctif DLNA Orange : gestion des URL contenant %3F
