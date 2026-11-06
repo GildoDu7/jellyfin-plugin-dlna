@@ -152,14 +152,15 @@ public class ContentDirectoryService : BaseService, IContentDirectory
             }
         }
 
-        foreach (var user in _userManager.Users)
+        foreach (var user in _userManager.GetUsers())
         {
             if (user.HasPermission(PermissionKind.IsAdministrator))
             {
                 return user;
             }
         }
+        
+        return _userManager.GetUsers().FirstOrDefault();
 
-        return _userManager.Users.FirstOrDefault();
     }
 }
