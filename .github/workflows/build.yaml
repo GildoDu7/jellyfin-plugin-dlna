@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - jellyfin-12.2-orange-fix
     paths-ignore:
       - '**/*.md'
   pull_request:
@@ -16,3 +17,6 @@ on:
 jobs:
   call:
     uses: jellyfin/jellyfin-meta-plugins/.github/workflows/build.yaml@master
+    with:
+      dotnet-version: '10.0.x'
+      dotnet-target: 'net10.0'
