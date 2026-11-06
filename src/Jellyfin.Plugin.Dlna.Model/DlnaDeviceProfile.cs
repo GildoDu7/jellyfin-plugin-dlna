@@ -404,7 +404,8 @@ public class DlnaDeviceProfile : DeviceProfile
                         numVideoStreams,
                         numAudioStreams,
                         videoCodecTag,
-                        isAvc))
+                        isAvc,
+                        null))
                 {
                     anyOff = true;
                     break;
